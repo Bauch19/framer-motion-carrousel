@@ -33,6 +33,7 @@ function App() {
   const [select, setSelect] = useState(0);
   return (
     <>
+      <h1 className='py-5 font-bold text-5xl'>Carrousel de imagenes con Framer Motion</h1>
       <div className='w-full px-5 flex justify-center items-center gap-5'>
         <AnimatePresence initial={true}>
           {select == 0 && (
