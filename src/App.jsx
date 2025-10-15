@@ -9,14 +9,14 @@ import './App.css';
 function App() {
 
   return (
-    <main className="w-full max-w-[700px] relative mx-auto flex flex-col relative items-center justify-center min-h-screen md:p-5 gap-0 lg:p-20">
+    <main className="w-full max-w-[700px] relative mx-auto flex flex-col relative items-center justify-center">
       <section 
-        className="w-full relative min-h-[800px] flex flex-col items-center justify-center gap-8 relative overflow-hidden"
+        className="w-full relative max-w-[700px] min-h-[800px] flex flex-col items-center justify-center gap-8 relative overflow-hidden"
       >
         <img 
           src={chicaFondo}
           alt="Fondo" 
-          className="w-full h-full fixed top-0 left-0 object-cover object-center z-[-1]"
+          className="w-full h-full max-w-[700px] fixed top-0 left-1/2 -translate-x-1/2 object-cover object-center z-[-1]"
         />
         <img 
           src="https://miinvitacion.com.mx/wp-content/uploads/2024/02/CORONA-NEW-BLANCA.png" 
