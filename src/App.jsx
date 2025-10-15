@@ -1,19 +1,23 @@
-import { motion, AnimatePresence } from 'framer-motion';
-import { useState, useRef, useEffect } from 'react';
-import { TimeIcon, LocationIcon } from "./components/icon";
+import { TimeIcon, LocationIcon, GiftIcon, WhatsAppIcon } from "./components/icon";
 import audioFile from './assets/music/cancion.mp3';
 import CountDown from './components/countDown';
+import TimeLine from './components/timeLine';
+import chicaFondo from "./assets/img/girl-shadow.jpg";
 
 import './App.css';
 
 function App() {
 
   return (
-    <main className="w-full max-w-[700px] mx-auto flex flex-col relative items-center justify-center min-h-screen md:p-5 gap-0 lg:p-20">
+    <main className="w-full max-w-[700px] relative mx-auto flex flex-col relative items-center justify-center min-h-screen md:p-5 gap-0 lg:p-20">
       <section 
-        className="w-full relative min-h-[800px] flex flex-col items-center justify-center gap-8 bg-cover bg-fixed bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/img/girl-shadow.jpg')" }}
+        className="w-full relative min-h-[800px] flex flex-col items-center justify-center gap-8 relative overflow-hidden"
       >
+        <img 
+          src={chicaFondo}
+          alt="Fondo" 
+          className="w-full h-full fixed top-0 left-0 object-cover object-center z-[-1]"
+        />
         <img 
           src="https://miinvitacion.com.mx/wp-content/uploads/2024/02/CORONA-NEW-BLANCA.png" 
           alt="Girl Shadow" 
@@ -137,6 +141,90 @@ function App() {
           Abrir Mapa
         </a>
       </Section>
+      <Section className='py-12 flex flex-col items-center justify-center gap-6'>
+        <p className='text-[#f4b029] text-center text-5xl font-[Nuptial] !font-bold'>
+          – Código de vestimenta –
+        </p>
+        <TimeIcon className='size-8 text-[#f4b029]' />
+        <p className='text-[#f4b029] text-center text-xl bad-script-regular'>
+          Formal
+        </p>
+        <img 
+          src="https://miinvitacion.net/wp-content/uploads/2025/05/vestimenta-2-18.png" 
+          alt="Girl Shadow" 
+          className="w-[280px] h-auto"
+        />
+        <p className='text-[#f4b029] text-center text-xl bad-script-regular'>
+          Color rojo y derivados son reservados para la quinceañera
+        </p>
+      </Section>
+      <Section className='py-12 flex flex-col items-center justify-center gap-6'>
+        <p className='text-[#f4b029] text-center text-5xl font-[Nuptial] !font-bold'>
+          – Itinerario –
+        </p>
+        <TimeLine />
+      </Section>
+      <Section className='py-12 flex flex-col items-center justify-center gap-6'>
+        <p className='text-[#f4b029] text-center text-3xl bad-script-regular !font-bold'>
+          Tú presencia es mi mejor regalo, pero si deseas tener un detalle, será muy bien recibido
+        </p>
+        <GiftIcon className='size-20 text-[#f4b029]' />
+      </Section>
+      <Section className='py-15 flex flex-col items-center justify-center gap-6'>
+        <p className='text-[#f4b029] text-center text-4xl font-[Nuptial] !font-bold'>
+          Hoy florece mi ilusión y mi corazón se llena de alegría. Celebro mis 15 años con quienes más amo.
+         <br />
+         <br />
+          Como una estrella que empieza a brillar, así comienza mi nueva etapa. Te invito a ser parte de mi noche mágica.
+        </p>
+      </Section>
+      <Section className='py-15 flex flex-col items-center justify-center gap-6'>
+        <p className='text-[#f4b029] text-center text-5xl font-[Nuptial] !font-bold'>
+          – Confirma tu asistencia –
+        </p>
+        <p className='text-[#f4b029] text-center text-2xl bad-script-regular !font-bold'>
+          Será una noche increíble
+          <br />
+          <br />
+          ¡Te esperamos!
+        </p>
+         <a 
+          className='flex no-underline items-center gap-2 px-4 py-2 bg-[#f4b029] rounded-[8px] text-[#7B0001] font-bold hover:bg-[#e3a92b] transition uppercase'
+          href="https://api.whatsapp.com/send?phone=+522211753142&text=Confirmo%20mi%20asistencia.%20Mi%20nombre%20es:"
+          target="_blank"
+        >
+          <WhatsAppIcon className='size-8 text-[#7B0001]' />
+          Confirmar
+        </a>
+        <img 
+          src="https://miinvitacion.net/wp-content/uploads/2025/02/FLOR-30.png" 
+          alt="Girl Shadow" 
+          className="w-[240px] h-auto"
+        />
+      </Section>
+      <Section className='py-15 flex flex-col items-center justify-center gap-6'>
+        <p className='text-[#f4b029] text-center text-5xl font-[Nuptial] !font-bold'>
+          – Buzón de deseos –
+        </p>
+        <p className='text-[#f4b029] text-center text-xl bad-script-regular !font-bold'>
+          Quieres dedicarme unas palabras puedes
+          <br />
+          escribirme un mensaje.
+        </p>
+        <img 
+          src="https://miinvitacion.net/wp-content/uploads/2025/05/Anos-2025-05-30T223642.770-300x300.png" 
+          alt="Girl Shadow" 
+          className="w-[100px] h-auto"
+        />
+         <a 
+          className='flex no-underline items-center gap-2 px-4 py-2 bg-[#f4b029] rounded-[8px] text-[#7B0001] font-bold hover:bg-[#e3a92b] transition uppercase'
+          href="https://api.whatsapp.com/send?phone=+522211753142&text=Deja%20un%20bonito%20mensaje%20aqui..."
+          target="_blank"
+        >
+          <WhatsAppIcon className='size-8 text-[#7B0001]' />
+          Confirmar
+        </a>
+      </Section>
     </main>
   )
 }
@@ -144,14 +232,13 @@ function App() {
 function Section({ children, className }) {
   return (
     <section
-      className="w-full bg-cover bg-fixed bg-center bg-no-repeat p-4 flex justify-center items-center"
-      style={{
-        backgroundImage:
-          "url('https://miinvitacion.com.mx/wp-content/uploads/2024/02/fondo-new-rojo-3.png')",
-        backgroundPosition: "50% 50%",
-        backgroundSize: "200%",
-      }}
+      className="w-full overflow-hidden relative p-4 flex justify-center items-center"
     >
+      <img 
+        src={"https://miinvitacion.com.mx/wp-content/uploads/2024/02/fondo-new-rojo-3.png"}
+        alt="Fondo" 
+        className="w-full h-full absolute top-0 left-0 object-cover object-center z-[-1] scale-[2]"
+      />
       <div className={`w-full p-3 bg-[#7B0001] ${className}`}>
         {children}
       </div>
