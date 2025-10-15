@@ -1,23 +1,36 @@
-import { motion, AnimatePresence } from 'framer-motion'
-import { useState } from 'react'
-import './App.css'
-import InfinityCarousel from './components/InfinityCarousel';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useRef, useEffect } from 'react';
+import { PlayIcon, PauseIcon } from "./components/icon";
+import audioFile from './assets/music/cancion.mp3';
 
-const imgs = [
-  'https://images.unsplash.com/photo-1468898203265-d5b5601865c7?q=80&w=2994&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-  'https://images.unsplash.com/photo-1476673661721-ee798b115c3f?q=80&w=2944&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-  'https://images.unsplash.com/photo-1526066843114-f1623fde3476?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-];
+import './App.css';
 
 function App() {
-  const [select, setSelect] = useState(0);
+
   return (
-    <>
-      <h1 className='py-5 font-bold text-5xl'>Carrousel de imagenes con Framer Motion</h1>
-      <div className='w-full px-5 flex flex-col justify-center items-center gap-5'>
-        <InfinityCarousel />
-      </div>
-    </>
+    <main className="font-sans flex flex-col relative items-center justify-center min-h-screen p-5 pb-20 gap-16 lg:p-20">
+      <section 
+        className="w-full max-w-[500px] relative min-h-[800px] flex flex-col items-center justify-center gap-8 bg-cover bg-fixed bg-center md:bg-top bg-no-repeat"
+        style={{ backgroundImage: "url('/img/girl-shadow.jpg')" }}
+      >
+        <img 
+          src="https://miinvitacion.com.mx/wp-content/uploads/2024/02/CORONA-NEW-BLANCA.png" 
+          alt="Girl Shadow" 
+          className="w-[40px] h-auto"
+        />
+        <span className="text-2xl font-[Ananda] text-center">Mis XV años</span>
+        <p className="text-[6.5rem] leading-[5rem] font-[Nuptial] text-center">
+          Michelle
+        </p>
+        <audio className="" controls autoPlay src={audioFile} />
+        <img 
+          src="https://miinvitacion.com.mx/wp-content/uploads/2024/02/Diseno-sin-titulo-2024-02-22T210615.901.png" 
+          alt="Girl Shadow" 
+          className="w-[40px] h-auto"
+        />
+      </section>
+      <section className="w-full min-h-[300vh]"></section>
+    </main>
   )
 }
 
